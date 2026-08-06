@@ -1,0 +1,20 @@
+{
+	"folders": [
+		{
+			"path": "."
+		},
+		{
+			"path": "../compound-engineering"
+		},
+		{
+			"path": "../addyosmani-agent-skills"
+		},
+		{
+			"path": "../mattpocock-skills"
+		},
+		{
+			"path": "../fs2/master"
+		}
+	],
+  "settings": {}
+}
