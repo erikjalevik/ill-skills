@@ -28,7 +28,7 @@ Every plan should contain:
 
 Classify the work into one of these plan depths:
 
-- **Lightweight** - small, well-bounded, low ambiguity
+- **Light** - small, well-bounded, low ambiguity
 - **Standard** - normal feature or bounded refactor with some technical decisions to document
 - **Deep** - cross-cutting, strategic, high-risk, or highly uncertain implementation work
 
