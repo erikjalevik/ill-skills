@@ -13,6 +13,7 @@ Do high-quality, robust implementation work test-first following a spec in the f
 - **KISS** - Before writing any code, ask: "What is the simplest thing that could work?" Would a staff engineer look at this and say "why didn't you just..."?
 - **Stay in scope** - Touch only what the task requires. Don't "clean up" adjacent code or pre-existing issues.
 - **Test continuously** - Write tests as you go, not after finishing implementation.
+- **Test only at pre-agreed seams** - Before writing any tests, write down the seams under test and confirm them with the user. No test is written at an unconfirmed seam. You can't test everything — agreeing the seams up front is how testing effort lands on the critical paths and complex logic instead of every edge case.
 
 ## Process
 
