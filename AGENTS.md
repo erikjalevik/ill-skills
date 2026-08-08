@@ -7,4 +7,5 @@
 - Prefer simple, boring solutions. Would a staff engineer look at this and say "why didn't you just..."?
 - Always follow instructions in skills & workflows precisely, do not skip steps because you think they're not needed.
 - When adding new code, always read surrounding code and adopt the patterns and conventions used in it.
+- When writing markdown, do not add manual line breaks within paragraphs.
 - Do not include time estimates.
