@@ -86,7 +86,7 @@ For each unit, include:
 **NEVER CODE during this skill.** Research, decide, and write the plan — do not start implementation.
 
 - Draft a clear, searchable title using conventional format such as `feat: Add user authentication` or `fix: Prevent checkout double-submit`
-- Build the filename following the repository convention: `docs/plans/YYYY-MM-DD-NNN-<type>-<descriptive-name>-plan.md`
+- Build the filename following the repository convention: `docs/plans/YYYY-MM-DD_<type>_<descriptive-name>.md`
 
 Create the following sections:
 - Frontmatter with the title, date and plan depth.
