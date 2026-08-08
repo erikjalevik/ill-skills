@@ -55,7 +55,7 @@ Read the spec.
 
 ### 6. Execute
 
-Proceed using TDD unless otherwise instructed, or the code does not need tests (dev-mode-only code, config scripts etc). Use the `ill-write-test` skill for writing the tests. Tests are proof — "seems right" does not count as done.
+Proceed using TDD unless otherwise instructed, or the code does not need tests (dev-mode-only code, config scripts etc). Use the `ill-write-tests` skill for writing the tests. Tests are proof — "seems right" does not count as done.
 
 Follow project-local guidance in AGENTS.md for how to run the below steps.
 
