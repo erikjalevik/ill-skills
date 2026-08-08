@@ -1,2 +1,9 @@
-# illskills
-Personal agentic engineering skillset.
+# ill-skills
+
+My personal agentic engineering skillset.
+
+Inspired by (and in some cases, directly pilfered from):
+
+- https://github.com/mattpocock/skills
+- https://github.com/addyosmani/agent-skills
+- https://github.com/EveryInc/compound-engineering-plugin
