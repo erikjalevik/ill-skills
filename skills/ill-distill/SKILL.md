@@ -92,3 +92,9 @@ Inside, use the following template:
 ```
 
 That's it. An ADR can be a single paragraph. The value is in recording *that* a decision was made and *why*, not in filling out sections.
+
+## Process
+
+1. Review the full history of the context you are in, and extract candidates for documentation. Be picky, it's perfectly fine to decide nothing needs extracted.
+2. For each learning, decide whether it fits best as an ADR, or in one of AGENTS, ONTOLOGY, README, and write it.
+3. If a plan was used as a starting point, move it from `docs/plans/backlog` to `docs/plans/done`.

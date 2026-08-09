@@ -85,11 +85,11 @@ For each unit, include:
 
 **NEVER CODE during this skill.** Research, decide, and write the plan — do not start implementation.
 
-- Draft a clear, searchable title using conventional format such as `feat: Add user authentication` or `fix: Prevent checkout double-submit`
-- Build the filename following the repository convention: `docs/plans/YYYY-MM-DD_<type>_<descriptive-name>.md`
+- Draft a clear, searchable title such as `Add user authentication` or `Prevent checkout double-submit`
+- Build the filename following the repository convention: `docs/plans/backlog/YYYY-MM-DD_<descriptive-name>.md`
 
 Create the following sections:
-- Frontmatter with the title, date and plan depth.
+- Frontmatter with the title, date, type ("fix, "feature", "chore") and plan depth.
 - `## Problem Frame`: brief prose problem statement with context
 - `## Requirements`: the list of R-IDs and their descriptions
 - `## Scope Boundaries`: what the plan will NOT cover
