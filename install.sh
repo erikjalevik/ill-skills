@@ -17,24 +17,29 @@ fi
 for harness_dir in .claude .opencode; do
 	harness_dir="$target_dir/$harness_dir"
 
+	skills_src_dirs=("$repo_dir/skills" "$repo_dir/skills-trial")
+	agents_src_dirs=("$repo_dir/agents")
+
 	for name in skills agents; do
-		src_dir="$repo_dir/$name"
 		dest_dir="$harness_dir/$name"
 		mkdir -p "$dest_dir"
 
-		for item in "$src_dir"/*; do
-			item_name="$(basename "$item")"
-			link="$dest_dir/$item_name"
-			if [ -e "$link" ] || [ -L "$link" ]; then
-				if [ -L "$link" ] && [ "$(readlink "$link")" = "$item" ]; then
-					echo "Already linked: $link"
-					continue
+		src_dirs_var="${name}_src_dirs[@]"
+		for src_dir in "${!src_dirs_var}"; do
+			for item in "$src_dir"/*; do
+				item_name="$(basename "$item")"
+				link="$dest_dir/$item_name"
+				if [ -e "$link" ] || [ -L "$link" ]; then
+					if [ -L "$link" ] && [ "$(readlink "$link")" = "$item" ]; then
+						echo "Already linked: $link"
+						continue
+					fi
+					echo "Refusing to overwrite existing path: $link" >&2
+					exit 1
 				fi
-				echo "Refusing to overwrite existing path: $link" >&2
-				exit 1
-			fi
-			ln -s "$item" "$link"
-			echo "Linked $link -> $item"
+				ln -s "$item" "$link"
+				echo "Linked $link -> $item"
+			done
 		done
 	done
 
