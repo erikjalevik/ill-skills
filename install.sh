@@ -14,8 +14,15 @@ if [ ! -d "$target_dir" ]; then
 	exit 1
 fi
 
-for harness_dir in .claude .opencode; do
-	harness_dir="$target_dir/$harness_dir"
+target_dir="$(cd "$target_dir" && pwd)"
+
+opencode_subdir=".opencode"
+if [ "$target_dir" = "$HOME" ]; then
+	opencode_subdir=".config/opencode"
+fi
+
+for harness_subdir in .claude "$opencode_subdir"; do
+	harness_dir="$target_dir/$harness_subdir"
 
 	skills_src_dirs=("$repo_dir/skills" "$repo_dir/skills-trial")
 	agents_src_dirs=("$repo_dir/agents")
