@@ -71,11 +71,11 @@ Follow project-local guidance in AGENTS.md for how to run the below steps.
 
 #### Commit format
 
-- Do not use conventional commits. 
 - Title should be a phrase in imperative tense using sentence case: "Disable the static analyzer".
 - Description should provide extra context if necessary: "It generated a lot of false positives inside spdlog."
 - Description is optional; only add it if there is genuine rationale or intent to communicate, which is not obvious from the title or the code committed.
-- Description should NOT narrate what the code does.
+- If adding a description, keep it tight: a handful of bullet points or one paragraph. No essays. Description should NOT narrate what the code does.
+- Do not use conventional commits.
 
 ### 7. Verify
 
