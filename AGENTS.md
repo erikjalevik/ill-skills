@@ -8,4 +8,4 @@
 - Always follow instructions in skills & workflows precisely, do not skip steps because you think they're not needed.
 - When adding new code, always read surrounding code and adopt the patterns and conventions used in it.
 - When writing markdown, do not add manual line breaks within paragraphs.
-- Do not include time estimates.
+- Do not include effort estimates stated in minutes, hours, days. They have little meaning in a world of coding agents.
