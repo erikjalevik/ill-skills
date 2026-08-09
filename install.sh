@@ -6,6 +6,23 @@ if [ $# -ne 1 ]; then
 	exit 1
 fi
 
+link_path() {
+	local src="$1"
+	local link="$2"
+
+	if [ -e "$link" ] || [ -L "$link" ]; then
+		if [ -L "$link" ] && [ "$(readlink "$link")" = "$src" ]; then
+			echo "Already linked: $link"
+			return
+		fi
+		echo "Refusing to overwrite existing path: $link" >&2
+		exit 1
+	fi
+
+	ln -s "$src" "$link"
+	echo "Linked $link -> $src"
+}
+
 repo_dir="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 target_dir="$1"
 
@@ -34,32 +51,15 @@ for harness_subdir in .claude "$opencode_subdir"; do
 		src_dirs_var="${name}_src_dirs[@]"
 		for src_dir in "${!src_dirs_var}"; do
 			for item in "$src_dir"/*; do
-				item_name="$(basename "$item")"
-				link="$dest_dir/$item_name"
-				if [ -e "$link" ] || [ -L "$link" ]; then
-					if [ -L "$link" ] && [ "$(readlink "$link")" = "$item" ]; then
-						echo "Already linked: $link"
-						continue
-					fi
-					echo "Refusing to overwrite existing path: $link" >&2
-					exit 1
-				fi
-				ln -s "$item" "$link"
-				echo "Linked $link -> $item"
+				link_path "$item" "$dest_dir/$(basename "$item")"
 			done
 		done
 	done
 
-	agents_md="$harness_dir/AGENTS.md"
-	if [ -e "$agents_md" ] || [ -L "$agents_md" ]; then
-		if [ -L "$agents_md" ] && [ "$(readlink "$agents_md")" = "$repo_dir/AGENTS.md" ]; then
-			echo "Already linked: $agents_md"
-		else
-			echo "Refusing to overwrite existing path: $agents_md" >&2
-			exit 1
-		fi
-	else
-		ln -s "$repo_dir/AGENTS.md" "$agents_md"
-		echo "Linked $agents_md -> $repo_dir/AGENTS.md"
+	link_path "$repo_dir/AGENTS.md" "$harness_dir/AGENTS.md"
+
+	# CLAUDE.md only imports AGENTS.md, so it is of no use to other harnesses.
+	if [ "$harness_subdir" = ".claude" ]; then
+		link_path "$repo_dir/CLAUDE.md" "$harness_dir/CLAUDE.md"
 	fi
 done
