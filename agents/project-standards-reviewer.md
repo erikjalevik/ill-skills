@@ -24,6 +24,7 @@ If no existing skill is found for a certain category of artifact:
 
 ## What you're hunting for
 
+- **Unnecessary comments** -- pay special attention to conventions around comments, coding agents have a habit of narrating the code needlessly.
 - **Naming and structure violations** -- files placed in the wrong directory, file/component naming that doesn't match the stated convention.
 - **Ordering violations** -- wrong placement of helper functions, constants, types, private/public methods inside an implementation file. 
 
