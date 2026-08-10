@@ -76,8 +76,8 @@ For each agent:
 
 ### 5. Present results
 
-Each agent will return its findings as a JSON array, alongside some plain text. Present each agent's findings under a separate section heading, verbatim or lightly cleaned. Do **not** merge or rerank findings, since a change can pass one agent and fail another.
+Each agent will return its findings as a JSON array, alongside some plain text. Write each reviewer's findings verbatim to disk under `docs/reviews/[descriptive-name-for-this-changeset]/[persona-name]`.
 
-End with a summary: total findings per agent, the worst issue for each persona (if any), issues reported by multiple agents.
+Then output a summary table with one row per agent, and columns for the number of issues of each severity it found, and one for the total issue count, sorted on total issue count descending.
 
-Also write each reviewers findings verbatim to disk under `docs/reviews/[descriptive-name-for-this-changeset]/[persona-name]`.
+Then scan the reports and check whether the same issue was reported by more than agent. For those, output a table with a short issue title and the agent count, sorted on count descending.
