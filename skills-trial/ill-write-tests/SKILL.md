@@ -93,6 +93,27 @@ it('trims whitespace from titles', () => {
 
 Duplication in tests is acceptable when it makes each test independently understandable.
 
+#### DAMP does not mean hand-picking cases
+
+DAMP is about how a single test reads, not about how you decide which tests exist. When the subject varies along known axes (link type × location × path shape, resolution strategy × action × entry kind), enumerate the axes and loop over them. Hand-writing one `it` per case you happened to think of gives you a suite whose coverage nobody can audit: the reader sees "now let's test this, now let's test this other thing" and cannot tell what was left out.
+
+```typescript
+// Good: the axes are declared, so the covered set is visible at the top of the file
+for (const linkType of getLinkTypes()) {
+  describe(`createLink ${linkType}`, () => {
+    for (const location of getTestLocations("local")) {
+      describe(`on ${location.name}`, () => {
+        it(`creates ${linkType} to folder`, ...);
+      });
+    }
+  });
+}
+```
+
+This stays readable because the loop body still contains ordinary DAMP tests. Nested `describe`s mean a failure still names the exact case so nobody has to reverse-engineer the loop to know what broke.
+
+Two things worth checking before you enumerate. If several cells collapse onto one code path, the extra cells cost runtime and buy nothing — cover the path once and say so. And a full cross-product of every axis grows fast; prefer looping the axes that genuinely vary independently over multiplying all of them together.
+
 ### Prefer real implementations over mocks
 
 Use the simplest test double that gets the job done. The more your tests use real code, the more confidence they provide.
