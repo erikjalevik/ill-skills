@@ -69,14 +69,6 @@ Follow project-local guidance in AGENTS.md for how to run the below steps.
 8. Run any linter, and fix any remaining issues manually.
 9. Commit each unit to the current branch.
 
-#### Commit format
-
-- Title should be a phrase in imperative tense using sentence case: "Disable the static analyzer".
-- Description should provide extra context if necessary: "It generated a lot of false positives inside spdlog."
-- Description is optional; only add it if there is genuine rationale or intent to communicate, which is not obvious from the title or the code committed.
-- If adding a description, keep it tight: a handful of bullet points or one paragraph. No essays. Description should NOT narrate what the code does.
-- Do not use conventional commits.
-
 ### 7. Verify
 
 - Run the full test suite, type checker, linter etc inline once more at the end.
