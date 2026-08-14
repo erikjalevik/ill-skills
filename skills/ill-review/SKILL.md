@@ -76,8 +76,6 @@ For each agent:
 
 ### 5. Present results
 
-Each agent will return its findings as a JSON array, alongside some plain text. Write each reviewer's findings verbatim to disk under `docs/reviews/[descriptive-name-for-this-changeset]/[persona-name]`.
+Each agent will return its findings as a JSON array, alongside some plain text. Write each reviewer's findings verbatim to disk under `docs/reviews/[descriptive-name-for-this-changeset]/[persona-name].md`.
 
-Then output a summary table with one row per agent, and columns for the number of issues of each severity it found, and one for the total issue count, sorted on total issue count descending.
-
-Then scan the reports and check whether the same issue was reported by more than agent. For those, output a table with a short issue title and the agent count, sorted on count descending.
+Then output a summary table with one row per agent, and columns for the number of issues of each severity it found, and one for the total issue count, sorted on total issue count descending. Then scan the reports and count how many times the same issue was reported by each agent. Then output a table with a short issue title, the highest severity reported, and the agent count for each issue, sorted on count descending. Also write these two tables to disk at `docs/reviews/[descriptive-name-for-this-changeset]/summary.md`.
