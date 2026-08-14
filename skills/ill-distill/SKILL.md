@@ -95,6 +95,9 @@ That's it. An ADR can be a single paragraph. The value is in recording *that* a 
 
 ## Process
 
-1. Review the full history of the context you are in, and extract candidates for documentation. Be picky, it's perfectly fine to decide nothing needs extracted.
-2. For each learning, decide whether it fits best as an ADR, or in one of AGENTS, ONTOLOGY, README, and write it.
-3. If a plan was used as a starting point, move it from `docs/plans/backlog` to `docs/plans/done`.
+1. Look through the harness's session history and identify all recent sessions that pertain to the same task or plan.
+2. Review the full history of these, and the session you are currently in, and extract candidates for documentation. Be picky, it's perfectly fine to decide nothing needs extracted.
+3. For each learning, decide whether it fits best as an ADR, or in one of AGENTS, ONTOLOGY, README, and note it.
+4. Once you're done, present your candidates. The user has the final word on what gets added.
+5. If a plan was used as a starting point for the work, and it's still in the backlog, move it from `docs/plans/backlog` to `docs/plans/done`.
+6. Commit.
