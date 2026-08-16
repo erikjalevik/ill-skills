@@ -26,7 +26,7 @@ Do high-quality, robust implementation work test-first following a spec in the f
 
 Look for the originating spec, in this order:
 
-1. A path to a plan or a task doc the user passed as an argument.
+1. A path to a plan or a task doc the user passed as an argument. If a plan doc was found, move it from `plans/backlog` to `plans/in-progress`.
 2. If none is given, use the instructions in the prompt as the spec.
 3. If the intent is unclear or ambiguous, stop and ask the user.
 
